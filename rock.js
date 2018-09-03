@@ -11,12 +11,12 @@ function playGame(playerSelection, computerSelection) {
 	if (playerSelection === "rock" && computerSelection === "scissors" ||
 		playerSelection === "scissors" && computerSelection === "paper"||
 		playerSelection === "paper" && computerSelection === "rock") {
-			console.log(playerSelection + " beats " + computerSelection + ".");
+			return playerSelection + " beats " + computerSelection + ".";
 	} else if (playerSelection === "scissors" && computerSelection === "rock" ||
 			   playerSelection === "rock" && computerSelection === "paper" ||
 			   playerSelection === "paper" && computerSelection === "scissors") {
-				   console.log(playerSelection + " loses to " + computerSelection + ".");
+				   return playerSelection + " loses to " + computerSelection + ".";
 			   } else {
-				   console.log("Draw");
+				   return "Draw";
 			   }
 }
