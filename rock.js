@@ -1,32 +1,22 @@
-function computerPlay() {
-	randomWord = Math.floor(Math.random() * 3) + 1;
-	if (randomWord === 1) {
-		console.log("Rock")
-	} else if (randomWord === 2) {
-		console.log("Paper")
-	} else if (randomWord === 3) {
-		console.log("Scissors")
-	} else {
-		console.log("Fatal Error..")
-	}
+let gameChoice = ['rock', 'paper', 'scissors'];
 
+function computerPlay(playerSelection, computerSelection) {
+	let randomNumber = Math.floor(Math.random()*gameChoice.length);
+	return gameChoice[randomNumber];
 }
 
 function playGame(playerSelection, computerSelection) {
 	playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
 	computerSelection = computerPlay();
-	if ((playerSelection === "rock" && computerSelection === 3) ||
-		(playerSelection === "paper" && computerSelection === 1) ||
-		(playerSelection === "scissors" && computerSelection === 2)) {
-		console.log("Winner!");
-	} else if ((playerSelection === "rock" && computerSelection === 2) ||
-			   (playerSelection === "paper" && computerSelection === 3) ||
-			   (playerSelection === "scissors" && computerSelection === 1)) {
-		console.log("Loser!");
-	} else if (playerSelection === computerSelection) {
-		console.log("Draw!")
-	} else {
-		return playGame();
-	}
+	if (playerSelection === "rock" && computerSelection === "scissors" ||
+		playerSelection === "scissors" && computerSelection === "paper"||
+		playerSelection === "paper" && computerSelection === "rock") {
+			console.log(playerSelection + " beats " + computerSelection + ".");
+	} else if (playerSelection === "scissors" && computerSelection === "rock" ||
+			   playerSelection === "rock" && computerSelection === "paper" ||
+			   playerSelection === "paper" && computerSelection === "scissors") {
+				   console.log(playerSelection + " loses to " + computerSelection + ".");
+			   } else {
+				   console.log("Draw");
+			   }
 }
-
