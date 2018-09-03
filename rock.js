@@ -30,9 +30,9 @@ function game() {
 		console.log(playGame());
 	}
 	if (playerScore > computerScore) {
-		console.log("Player wins with " + playerScore + " points.");
+		console.log(`Player wins with ${playerScore} points!`);
 	} else if (computerScore > playerScore) {
-		console.log("Computer wins with " + computerScore + " points.");
+		console.log(`Computer wins with ${computerScore} points!`);
 	}
 }
 	
